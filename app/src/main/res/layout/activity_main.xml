@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="event"
+            type="com.example.androidretrofitandokhttp.presentation.MainIPresenter.Presenter" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/titleView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/textTitle"
+            android:padding="6sp"
+            app:layout_constraintBottom_toTopOf="@+id/titleInformationView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/titleInformationView"
+            android:layout_width="171dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/textCurrentStartView"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+            app:layout_constraintHorizontal_bias="0.514"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleView" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="96dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textConvertorView"
+            android:layout_width="123dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="@string/textConfertor"
+            app:layout_constraintBottom_toTopOf="@+id/textYourSumView"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerView"
+            app:layout_constraintVertical_bias="0.55" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textYourSumView"
+            android:layout_width="122dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/textAddValue"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@+id/appCompatButton"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textConvertorView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textBuyView"
+            android:layout_width="116dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginEnd="24dp"
+            android:gravity="center"
+            android:text="@string/textBuyView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/appCompatButton"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textYourSumView"
+            app:layout_constraintVertical_bias="0.109" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/appCompatButton"
+            android:layout_width="50dp"
+            android:layout_height="37dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:padding="4sp"
+            app:layout_constraintBottom_toTopOf="@+id/appCompatEditText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textYourSumView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textSellView"
+            android:layout_width="116dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginRight="32dp"
+            android:gravity="center"
+            android:text="@string/textSellView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/appCompatButton"
+            app:layout_constraintTop_toBottomOf="@+id/textYourSumView"
+            app:layout_constraintVertical_bias="0.109" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/appCompatEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginEnd="64dp"
+            android:layout_marginBottom="212dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatButton" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/appCompatButton3"
+            android:layout_width="106dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/textUSDBtnView"
+            app:layout_constraintBottom_toTopOf="@+id/appCompatButton4"
+            app:layout_constraintEnd_toStartOf="@+id/appCompatButton2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatEditText" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/appCompatButton2"
+            android:layout_width="106dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="64dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/textEURBtnView"
+            app:layout_constraintBottom_toTopOf="@+id/appCompatButton5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/appCompatButton3"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatEditText" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/appCompatButton4"
+            android:layout_width="106dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="58dp"
+            android:text="@string/textGBPBtnView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/appCompatButton5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatButton3" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/appCompatButton5"
+            android:layout_width="106dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="64dp"
+            android:layout_marginBottom="58dp"
+            android:text="@string/textPLNBtnView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/appCompatButton4"
+            app:layout_constraintTop_toBottomOf="@+id/appCompatButton2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
