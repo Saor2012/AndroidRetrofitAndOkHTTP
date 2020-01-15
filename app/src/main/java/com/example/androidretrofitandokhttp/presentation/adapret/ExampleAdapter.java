@@ -9,15 +9,16 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.androidretrofitandokhttp.R;
+import com.example.androidretrofitandokhttp.data.model.ExchangeAPIModel;
 import com.example.androidretrofitandokhttp.presentation.MainIPresenter;
 
 import java.util.List;
 
 public class ExampleAdapter extends RecyclerView.Adapter<ViewHolderAdapter> {
     private MainIPresenter.Presenter presenter;
-    private List<String> list;
+    private List<ExchangeAPIModel> list;
 
-    public ExampleAdapter(MainIPresenter.Presenter presenter, List<String> list) {
+    public ExampleAdapter(MainIPresenter.Presenter presenter, List<ExchangeAPIModel> list) {
         this.presenter = presenter;
         this.list = list;
     }

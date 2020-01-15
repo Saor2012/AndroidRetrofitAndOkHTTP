@@ -6,6 +6,7 @@ import android.widget.Toast;
 import androidx.annotation.LayoutRes;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 
 public abstract class BaseActivity<Binding extends ViewDataBinding> extends AppCompatActivity {
@@ -14,7 +15,8 @@ public abstract class BaseActivity<Binding extends ViewDataBinding> extends AppC
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        binding = DataBindingUtil.setContentView(this, getLayoutRes());
+        initView();
     }
 
     @Override

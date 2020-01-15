@@ -16,9 +16,8 @@
             android:id="@+id/titleView"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginBottom="8dp"
-            android:text="@string/textTitle"
             android:padding="6sp"
+            android:text="@string/textTitle"
             app:layout_constraintBottom_toTopOf="@+id/titleInformationView"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -28,28 +27,60 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/titleInformationView"
-            android:layout_width="171dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="16dp"
-            android:text="@string/textCurrentStartView"
+            android:layout_width="162dp"
+            android:layout_height="24dp"
+            android:layout_marginBottom="32dp"
             android:gravity="center"
+            android:text="@string/textCurrentStartView"
             app:layout_constraintBottom_toTopOf="@+id/recyclerView"
-            app:layout_constraintHorizontal_bias="0.514"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/titleView" />
 
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/titleBuyView"
+            android:layout_width="0dp"
+            android:layout_height="29dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="4dp"
+            android:text="@string/textBuyTitle"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+            app:layout_constraintEnd_toStartOf="@+id/titleInformationView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleView"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/titleSaleView"
+            android:layout_width="0dp"
+            android:layout_height="29dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="4dp"
+            android:text="@string/textSaleTitle"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/titleInformationView"
+            app:layout_constraintTop_toBottomOf="@+id/titleView"
+            app:layout_constraintVertical_bias="1.0" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="96dp"
+            android:layout_height="210dp"
+            android:layout_marginTop="90dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="MissingConstraints" />
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints"
+            tools:listitem="@layout/rv_item"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/textConvertorView"
@@ -73,7 +104,7 @@
             android:layout_marginBottom="16dp"
             android:text="@string/textAddValue"
             android:gravity="center"
-            app:layout_constraintBottom_toTopOf="@+id/appCompatButton"
+            app:layout_constraintBottom_toTopOf="@+id/switchField"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textConvertorView" />
@@ -87,19 +118,19 @@
             android:gravity="center"
             android:text="@string/textBuyView"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/appCompatButton"
+            app:layout_constraintEnd_toStartOf="@+id/switchField"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textYourSumView"
             app:layout_constraintVertical_bias="0.109" />
 
         <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/appCompatButton"
+            android:id="@+id/switchField"
             android:layout_width="50dp"
             android:layout_height="37dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="16dp"
             android:padding="4sp"
-            app:layout_constraintBottom_toTopOf="@+id/appCompatEditText"
+            app:layout_constraintBottom_toTopOf="@+id/editTextField"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
@@ -115,12 +146,12 @@
             android:text="@string/textSellView"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/appCompatButton"
+            app:layout_constraintStart_toEndOf="@+id/switchField"
             app:layout_constraintTop_toBottomOf="@+id/textYourSumView"
             app:layout_constraintVertical_bias="0.109" />
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/appCompatEditText"
+            android:id="@+id/editTextField"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="64dp"
@@ -130,10 +161,10 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/appCompatButton" />
+            app:layout_constraintTop_toBottomOf="@+id/switchField" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/appCompatButton3"
+            android:id="@+id/btnUSD"
             android:layout_width="106dp"
             android:layout_height="56dp"
             android:layout_marginStart="64dp"
@@ -141,13 +172,13 @@
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="8dp"
             android:text="@string/textUSDBtnView"
-            app:layout_constraintBottom_toTopOf="@+id/appCompatButton4"
-            app:layout_constraintEnd_toStartOf="@+id/appCompatButton2"
+            app:layout_constraintBottom_toTopOf="@+id/btnGBP"
+            app:layout_constraintEnd_toStartOf="@+id/btnEUR"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/appCompatEditText" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextField" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/appCompatButton2"
+            android:id="@+id/btnEUR"
             android:layout_width="106dp"
             android:layout_height="56dp"
             android:layout_marginStart="32dp"
@@ -155,13 +186,13 @@
             android:layout_marginEnd="64dp"
             android:layout_marginBottom="8dp"
             android:text="@string/textEURBtnView"
-            app:layout_constraintBottom_toTopOf="@+id/appCompatButton5"
+            app:layout_constraintBottom_toTopOf="@+id/btnPLN"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/appCompatButton3"
-            app:layout_constraintTop_toBottomOf="@+id/appCompatEditText" />
+            app:layout_constraintStart_toEndOf="@+id/btnUSD"
+            app:layout_constraintTop_toBottomOf="@+id/editTextField" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/appCompatButton4"
+            android:id="@+id/btnGBP"
             android:layout_width="106dp"
             android:layout_height="56dp"
             android:layout_marginStart="64dp"
@@ -170,12 +201,12 @@
             android:layout_marginBottom="58dp"
             android:text="@string/textGBPBtnView"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/appCompatButton5"
+            app:layout_constraintEnd_toStartOf="@+id/btnPLN"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/appCompatButton3" />
+            app:layout_constraintTop_toBottomOf="@+id/btnUSD" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/appCompatButton5"
+            android:id="@+id/btnPLN"
             android:layout_width="106dp"
             android:layout_height="56dp"
             android:layout_marginStart="32dp"
@@ -185,8 +216,8 @@
             android:text="@string/textPLNBtnView"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/appCompatButton4"
-            app:layout_constraintTop_toBottomOf="@+id/appCompatButton2" />
+            app:layout_constraintStart_toEndOf="@+id/btnGBP"
+            app:layout_constraintTop_toBottomOf="@+id/btnEUR" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

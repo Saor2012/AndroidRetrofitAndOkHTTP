@@ -1,5 +1,11 @@
 package com.example.androidretrofitandokhttp.domain;
 
-public interface MainIInteractor {
+import com.example.androidretrofitandokhttp.data.model.ExchangeAPIModel;
 
+import java.util.List;
+
+import io.reactivex.Single;
+
+public interface MainIInteractor {
+        Single<List<ExchangeAPIModel>> getDataAPI();
 }

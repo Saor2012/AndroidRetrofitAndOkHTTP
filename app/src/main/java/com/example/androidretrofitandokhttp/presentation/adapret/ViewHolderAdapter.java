@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.androidretrofitandokhttp.R;
+import com.example.androidretrofitandokhttp.data.model.ExchangeAPIModel;
 import com.example.androidretrofitandokhttp.databinding.RvItemBinding;
 import com.example.androidretrofitandokhttp.presentation.MainIPresenter;
 import com.example.androidretrofitandokhttp.presentation.MainPresenter;
@@ -23,9 +24,11 @@ public class ViewHolderAdapter extends RecyclerView.ViewHolder {
         if (binding != null && presenter != null) binding.setEvent(presenter);
     }
 
-    public void bind (String item, int position) {
+    public void bind (ExchangeAPIModel item, int position) {
         if (item != null) {
-            //binding. .setText(item);
+            binding.itemViewBuy.setText(item.getBuy());
+            binding.itemViewTypeExchange.setText(item.getCcy());
+            binding.itemViewSale.setText(item.getSale());
         }
     }
 

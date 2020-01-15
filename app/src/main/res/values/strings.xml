@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">AndroidRetrofitAndOkHTTP</string>
     <string name="textTitle">Курс валют ПриватБанк</string>
+    <string name="textBuyTitle">Придбати</string>
+    <string name="textSaleTitle">Продати</string>
     <string name="textCurrentStartView">Курс валют</string>
     <string name="textConfertor">Конвертор</string>
     <string name="textAddValue">Введіть вашу суму</string>
