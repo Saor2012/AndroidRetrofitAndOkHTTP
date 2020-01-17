@@ -88,7 +88,34 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> implements M
 
     @Override
     public void setResult(String response, String v) {
-        //getBinding().textYourSumView.setText();
+        getBinding().textYourSumView.setText(response);
+        Timber.e("Insert value %s for %s type", response, v);
+        switch (v) {
+            case "USD":
+                getBinding().btnUSD.setBackgroundColor(getResources().getColor(R.color.colorBlue));
+                getBinding().btnEUR.setBackgroundColor(getResources().getColor(R.color.colorWhite));
+                getBinding().btnGBP.setBackgroundColor(getResources().getColor(R.color.colorWhite));
+                getBinding().btnPLN.setBackgroundColor(getResources().getColor(R.color.colorWhite));
+                break;
+            case "EUR":
+                getBinding().btnUSD.setBackgroundColor(getResources().getColor(R.color.colorWhite));
+                getBinding().btnEUR.setBackgroundColor(getResources().getColor(R.color.colorBlue));
+                getBinding().btnGBP.setBackgroundColor(getResources().getColor(R.color.colorWhite));
+                getBinding().btnPLN.setBackgroundColor(getResources().getColor(R.color.colorWhite));
+                break;
+            case "RUR":
+                getBinding().btnUSD.setBackgroundColor(getResources().getColor(R.color.colorWhite));
+                getBinding().btnEUR.setBackgroundColor(getResources().getColor(R.color.colorWhite));
+                getBinding().btnGBP.setBackgroundColor(getResources().getColor(R.color.colorBlue));
+                getBinding().btnPLN.setBackgroundColor(getResources().getColor(R.color.colorWhite));
+                break;
+            case "BTC":
+                getBinding().btnUSD.setBackgroundColor(getResources().getColor(R.color.colorWhite));
+                getBinding().btnEUR.setBackgroundColor(getResources().getColor(R.color.colorWhite));
+                getBinding().btnGBP.setBackgroundColor(getResources().getColor(R.color.colorWhite));
+                getBinding().btnPLN.setBackgroundColor(getResources().getColor(R.color.colorBlue));
+                break;
+        }
     }
 
     @SuppressLint("WrongConstant")

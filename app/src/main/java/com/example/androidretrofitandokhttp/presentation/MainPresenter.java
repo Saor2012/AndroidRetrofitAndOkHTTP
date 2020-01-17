@@ -68,12 +68,30 @@ public class MainPresenter implements MainIPresenter.Presenter {
 
     @Override
     public void calculate(List<ExchangeAPIModel> data, String v, String number, boolean flag) {
-
+        if (!Double.valueOf(number).isNaN() && !Double.valueOf(number).isInfinite()) {
+            if (number.equals("")) view.viewToast("Zero entry number");
+            else {
+                data.forEach(values -> {
+                    if (values.getCcy().equals(v)) {
+                        if (flag) {
+                            double result = Double.valueOf(values.getSale()) * Double.valueOf(number);
+                            view.setResult(String.valueOf(result), v);
+                        } else {
+                            double result = Double.valueOf(values.getBuy()) * Double.valueOf(number);
+                            view.setResult(String.valueOf(result), v);
+                        }
+                    }
+                });
+            }
+        } else view.viewToast("NAN or Infinite insert value");
     }
 
     @Override
     public void onClick(String v) {
         view.CheckSwitch(v);
-        calculate(list, v, view.getData(), view.getLevelType());
+        String number = view.getData();
+        if (!number.equals("") && number.matches("[0-9]{1,10}"))
+            calculate(list, v, number, view.getLevelType());
+        else view.viewToast("Invalide insert value");
     }
 }
