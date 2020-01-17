@@ -12,4 +12,6 @@
     <string name="textEURBtnView">EUR</string>
     <string name="textPLNBtnView">PLN</string>
     <string name="textGBPBtnView">GBP</string>
+    <string name="textRURBtnView">RUR</string>
+    <string name="textBTCBtnView">BTC</string>
 </resources>

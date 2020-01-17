@@ -14,9 +14,11 @@ import timber.log.Timber;
 public class MainPresenter implements MainIPresenter.Presenter {
     private MainIPresenter.View view;
     private MainIInteractor interactor;
+    private List<ExchangeAPIModel> list;
 
     public MainPresenter() {
         if (interactor == null) interactor = new MainInteractor();
+        list = null;
     }
 
     @Override
@@ -39,6 +41,10 @@ public class MainPresenter implements MainIPresenter.Presenter {
                 @Override
                 public void onSuccess(List<ExchangeAPIModel> exchangeAPIModels) {
                     updateList(exchangeAPIModels);
+                    if (isDisposed()) {
+                        onError(new Exception("Local exaption: subscriber is disposed"));
+                    }
+                    list = exchangeAPIModels;
                     dispose();
                 }
 
@@ -67,6 +73,7 @@ public class MainPresenter implements MainIPresenter.Presenter {
 
     @Override
     public void onClick(String v) {
-
+        view.CheckSwitch(v);
+        calculate(list, v, view.getData(), view.getLevelType());
     }
 }

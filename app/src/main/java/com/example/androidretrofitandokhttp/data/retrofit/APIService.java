@@ -1,4 +1,4 @@
-package com.example.androidretrofitandokhttp.data;
+package com.example.androidretrofitandokhttp.data.retrofit;
 
 import com.example.androidretrofitandokhttp.data.model.ExchangeAPIModel;
 

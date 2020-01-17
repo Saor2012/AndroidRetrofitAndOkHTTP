@@ -71,13 +71,13 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> implements M
                 getBinding().btnGBP.setBackgroundColor(getResources().getColor(R.color.colorWhite));
                 getBinding().btnPLN.setBackgroundColor(getResources().getColor(R.color.colorWhite));
                 break;
-            case "GBP":
+            case "RUR":
                 getBinding().btnUSD.setBackgroundColor(getResources().getColor(R.color.colorWhite));
                 getBinding().btnEUR.setBackgroundColor(getResources().getColor(R.color.colorWhite));
                 getBinding().btnGBP.setBackgroundColor(getResources().getColor(R.color.colorGreen));
                 getBinding().btnPLN.setBackgroundColor(getResources().getColor(R.color.colorWhite));
                 break;
-            case "PLN":
+            case "BTC":
                 getBinding().btnUSD.setBackgroundColor(getResources().getColor(R.color.colorWhite));
                 getBinding().btnEUR.setBackgroundColor(getResources().getColor(R.color.colorWhite));
                 getBinding().btnGBP.setBackgroundColor(getResources().getColor(R.color.colorWhite));
@@ -107,6 +107,16 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> implements M
     public void viewToast(String message) {
         Timber.e("Message: %s", message);
         toast(message);
+    }
+
+    @Override
+    public String getData() {
+        return String.valueOf(getBinding().editTextField.getText());
+    }
+
+    @Override
+    public boolean getLevelType() {
+        return getBinding().switchField.isChecked();
     }
 
     @SuppressLint("WrongConstant")

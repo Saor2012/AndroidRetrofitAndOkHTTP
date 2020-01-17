@@ -6,14 +6,9 @@ import androidx.room.Room;
 
 import com.example.androidretrofitandokhttp.BuildConfig;
 import com.example.androidretrofitandokhttp.data.Constants;
-import com.example.androidretrofitandokhttp.data.RESTService;
+import com.example.androidretrofitandokhttp.data.retrofit.RESTService;
 import com.example.androidretrofitandokhttp.data.roomdb.LocalServisEntry;
 import com.example.androidretrofitandokhttp.data.roomdb.PersonalDataBase;
-import com.google.gson.FieldNamingPolicy;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
-import java.security.PublicKey;
 
 import timber.log.Timber;
 
@@ -44,8 +39,8 @@ public class App extends Application {
 
     private LocalServisEntry provideEntryDataBase() {
         PersonalDataBase dataBase = Room.databaseBuilder(this, PersonalDataBase.class, Constants.NAME_DAO)
-                .allowMainThreadQueries()
-                .build();
+            .allowMainThreadQueries()
+            .build();
         return dataBase.getPersonalDAO();
     }
 

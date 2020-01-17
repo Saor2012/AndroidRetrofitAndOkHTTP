@@ -1,8 +1,12 @@
 package com.example.androidretrofitandokhttp.data.model;
 
+import androidx.room.PrimaryKey;
+
 import com.google.gson.annotations.SerializedName;
 
 public class ExchangeAPIModel {
+	//@PrimaryKey(autoGenerate = true)
+	//private long id;
 	@SerializedName("sale")
 	private String sale;
 	@SerializedName("base_ccy")

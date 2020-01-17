@@ -35,6 +35,7 @@ public class Repository implements IRepository {
 
     @Override
     public Single<List<ExchangeAPIModel>> getData() {
-        return App.getRESTService().getService().getData();
+        return App.getRESTService().getService().getData()
+                .doOnError(throwable -> Timber.e("Exception: Error at Repository.getData() with API getData() from App class: %s", throwable.getMessage()));
     }
 }

@@ -13,6 +13,8 @@ import com.example.androidretrofitandokhttp.databinding.RvItemBinding;
 import com.example.androidretrofitandokhttp.presentation.MainIPresenter;
 import com.example.androidretrofitandokhttp.presentation.MainPresenter;
 
+import java.text.DecimalFormat;
+
 public class ViewHolderAdapter extends RecyclerView.ViewHolder {
     private MainIPresenter.Presenter presenter;
     private RvItemBinding binding;
@@ -26,6 +28,7 @@ public class ViewHolderAdapter extends RecyclerView.ViewHolder {
 
     public void bind (ExchangeAPIModel item, int position) {
         if (item != null) {
+            binding.setEntity(item);
             binding.itemViewBuy.setText(item.getBuy());
             binding.itemViewTypeExchange.setText(item.getCcy());
             binding.itemViewSale.setText(item.getSale());

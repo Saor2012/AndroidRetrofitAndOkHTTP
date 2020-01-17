@@ -11,6 +11,8 @@ public interface MainIPresenter {
         void setResult(String response, String v);
         void UpdateData(List<ExchangeAPIModel> list);
         void viewToast(String message);
+        String getData();
+        boolean getLevelType();
     }
     interface Presenter extends BaseIPresenter<View> {
         void init();
